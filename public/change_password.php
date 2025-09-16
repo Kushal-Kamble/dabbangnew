@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$old || !$new || !$conf) {
         $msg = ['type'=>'error','text'=>'Please fill all fields.'];
-    } else if ($new !== $conf) {
+    } elseif ($new !== $conf) {
         $msg = ['type'=>'error','text'=>'New password and confirmation do not match.'];
     } else {
         $stmt = $conn->prepare("SELECT password FROM subscribers WHERE id = ? LIMIT 1");
@@ -45,16 +45,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Change Password</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    :root { --brand1:#f5945c; --brand2:#fec76f; }
+    body {
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--brand1),var(--brand2));
+    }
+    .change-card {
+      max-width:450px; width:100%; background:#fff; padding:30px;
+      border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.15);
+      animation:fadeIn .6s ease;
+    }
+    .change-card h4 { color:var(--brand1); font-weight:600; }
+    .btn-brand {
+      background:var(--brand1); border:none; color:#fff; font-weight:600; width:100%;
+    }
+    .btn-brand:hover { background:var(--brand2); color:#212529; }
+    @keyframes fadeIn {
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+  </style>
 </head>
-<body class="p-4">
-  <div class="container" style="max-width:540px;margin-top:50px;">
-    <h4>Change Password</h4>
+<body>
+  <div class="change-card">
+    <h4 class="mb-3 text-center">🔑 Change Password</h4>
 
     <form method="post">
       <div class="mb-3">
@@ -69,17 +93,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label class="form-label">Confirm New Password</label>
         <input name="confirm_password" type="password" class="form-control" required>
       </div>
-      <button class="btn btn-primary">Change Password</button>
+      <button class="btn btn-brand mb-2">Change Password</button>
+      <a href="login.php" class="btn btn-link w-100 text-center">Back to Login</a>
     </form>
   </div>
 
   <?php if (!empty($msg)): ?>
-    <script>
-      Swal.fire({
-        icon: '<?= $msg['type']==='success' ? 'success' : 'error' ?>',
-        title: '<?= addslashes($msg['text']) ?>'
-      });
-    </script>
+  <script>
+    Swal.fire({
+      icon: '<?= $msg['type']==='success' ? 'success' : 'error' ?>',
+      title: '<?= addslashes($msg['text']) ?>',
+      confirmButtonColor: '#f5945c'
+    }).then(() => {
+  <?php if ($msg['type']==='success'): ?>
+    window.location.href = 'login.php';
+  <?php endif; ?>
+});
+</script>;
+  </script>
   <?php endif; ?>
 </body>
 </html>

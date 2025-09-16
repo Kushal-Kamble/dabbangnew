@@ -4,6 +4,15 @@ require_once __DIR__ . '/../inc/mailer.php';
 if (session_status() === PHP_SESSION_NONE) session_start();
 $isLoggedIn = !empty($_SESSION['user_logged_in']); 
 
+$latestPosts = $conn->query("
+  SELECT p.id, p.title, p.description, p.main_media, p.post_date, c.name AS category_name
+  FROM posts p
+  LEFT JOIN categories c ON p.category_id = c.id
+  ORDER BY p.post_date DESC, p.id DESC
+  LIMIT 6
+");
+
+
 // Random strong password generate
 function generatePassword($length = 10) {
   $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
@@ -40,31 +49,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ✅ Stylish Email Template
     $subject = "🎉 Welcome {$first_name}, Your Subscription is Active!";
     $message = '
-    <div style="font-family: Arial, sans-serif; max-width:600px; margin:auto; background:#f5f7fb; border-radius:8px; overflow:hidden;">
-      <div style="background:#fe9e43; padding:20px; text-align:center;">
-        <h1 style="color:#fff; margin:0;">MITSDE Newsletter</h1>
-      </div>s
-      <div style="padding:20px; color:#212428;">
-        <p>Hi <strong>'.$first_name.' '.$last_name.'</strong>,</p>
-        <p>Thank you for subscribing to <b>MITSDE Newsletter</b>! 🎉</p>
-        <p>Here are your login details:</p>
-        <table style="width:100%; border-collapse:collapse; margin-top:10px;">
-          <tr>
-            <td style="padding:8px; background:#fefffe; border:1px solid #ddd;">Email</td>
-            <td style="padding:8px; background:#fff; border:1px solid #ddd;"><strong>'.$email.'</strong></td>
-          </tr>
-          <tr>
-            <td style="padding:8px; background:#fefffe; border:1px solid #ddd;">Password</td>
-            <td style="padding:8px; background:#fff; border:1px solid #ddd; color:#fe9e43;"><strong>'.$password.'</strong></td>
-          </tr>
-        </table>
-        <p style="margin-top:20px;">You can now <a href="'.$BASE_URL.'/login.php" style="color:#fe9e43; text-decoration:none;">log in</a> and explore the latest newsletters and insights.</p>
-        <p style="font-size:13px; color:#666;">For your security, please change your password after logging in.</p>
+<div style="font-family: Arial, sans-serif; background:#fef9f6; padding:40px; text-align:center;">
+  <div style="max-width:520px; margin:auto; background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); overflow:hidden;">
+    
+    <!-- Header -->
+    <div style="background:linear-gradient(45deg,#fe9e43,#fec76f); padding:20px;">
+      <h2 style="color:#fff; margin:0;">Welcome to MITSDE Newsletter 🎉</h2>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:30px;">
+      <p style="font-size:16px; color:#333;">Hi <strong>'.$first_name.' '.$last_name.'</strong>,</p>
+      <p style="font-size:15px; color:#555;">
+        Thank you for subscribing to <b>MITSDE Newsletter</b>! 🚀<br>
+        Here are your login details:
+      </p>
+
+      <!-- Login Details -->
+      <div style="margin:20px 0; text-align:left; display:inline-block;">
+        <div style="padding:10px 16px; background:#fef4e7; border-radius:6px; margin-bottom:10px; font-size:15px; color:#444;">
+          <strong>Email:</strong> '.$email.'
+        </div><br>
+        <div style="padding:10px 16px; background:#fef4e7; border-radius:6px; font-size:15px; color:#444;">
+          <strong>Password:</strong> <span style="color:#fe9e43; font-weight:bold;">'.$password.'</span>
+        </div>
       </div>
-      <div style="background:#212428; color:#fefffe; text-align:center; padding:10px;">
-        © '.date('Y').' MITSDE Newsletter | Stay Connected 🚀
-      </div>
-    </div>';
+
+      <!-- Button -->
+      <p>
+        <a href="'.$BASE_URL.'/login.php" style="display:inline-block;margin-top:20px;padding:12px 24px;background:#fe9e43;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;">
+          Login Now
+        </a>
+      </p>
+
+      <p style="font-size:12px; color:#777; margin-top:15px;">
+        For your security, please change your password after logging in.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background:#fef4e7; padding:10px; font-size:12px; color:#777;">
+      © '.date('Y').' MITSDE Newsletter. Stay Connected 🚀
+    </div>
+  </div>
+</div>';
+
 
     // Send mail
     $headers  = "MIME-Version: 1.0\r\n";
@@ -86,18 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-<?php
-require_once __DIR__ . '/../config.php';
-if (session_status() === PHP_SESSION_NONE) session_start();
 
-$latestPosts = $conn->query("
-  SELECT p.id, p.title, p.description, p.main_media, p.post_date, c.name AS category_name
-  FROM posts p
-  LEFT JOIN categories c ON p.category_id = c.id
-  ORDER BY p.post_date DESC, p.id DESC
-  LIMIT 6
-");
-?>
 <!doctype html>
 <html lang="en">
 

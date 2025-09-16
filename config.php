@@ -1,14 +1,14 @@
 <?php
 // config.php
 // Update these values for your environment
-$BASE_URL = 'http://localhost/dabbang'; // change if needed
+$BASE_URL = 'http://localhost/dabbangnew'; // change if needed
 
 // DB
-// $DB_HOST = 'localhost';
-$DB_HOST = 'localhost:3309';
+$DB_HOST = 'localhost';
+// $DB_HOST = 'localhost:3309';
 $DB_USER = 'root';
 $DB_PASS = ''; // your DB password
-$DB_NAME = 'dabbang'; // your DB name
+$DB_NAME = 'dabbangnew'; // your DB name
 
 // Connect
 $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
