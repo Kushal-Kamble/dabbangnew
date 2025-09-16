@@ -1,0 +1,49 @@
+ .post-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fff;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+    .post-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .badge-category {
+      background-color: #212428;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 12px;
+      padding: 4px 10px;
+    }
+    .badge-date {
+      background-color: #28a745;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 12px;
+      padding: 4px 10px;
+    }
+    .btn-read {
+      background-color: #fe9e43;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 16px;
+      color: #fff;
+      font-size: 14px;
+    }
+    .btn-read:hover {
+      background-color: #e88a33;
+      color: #fff;
+    }
+    .badge-date {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 11px; /* smaller text */
+  border-radius: 12px;
+  padding: 4px 10px;
+  opacity: 0.9; /* slightly lighter */
+}

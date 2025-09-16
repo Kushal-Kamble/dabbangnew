@@ -1,0 +1,38 @@
+mera ye new component_master table hai admin ky krega post add krega ye 6 category hai 1. This Week's Insights (3 sub-subcategory : a, b, c)
+2. Quick Bytes (2 sub-items: a, b)
+3. AI Tip of the Week (single item)
+4. Toolbox (AI tools info - 2 sub-items: a, b)
+5. Market News (Career and technology - 3 sub-items: a, b, c)
+6. Wellness Byte (3 sub-subcategory ;   CREATE TABLE component_master ( 
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  category VARCHAR(255),
+  title VARCHAR(255),
+  subcategory VARCHAR(255),
+  image_video TEXT,
+  links TEXT,
+  used_in TINYINT(1) DEFAULT 0
+);
+
+
+sabse pehle meri 7  category aur 
+1]this weeks insights,2]quick bytes,3] Ai tip of the week ,4]Toolbox =,5]market news(career and technology),6]wellnessbyte which inside it has 3 sections : a]activities for mental health,b]tools for mental health ,c] tips  and last section,7]quote  of the day aur ye 7 category databse me alag table bnega aur 7 category ki algat id  rahegi  category ka alag table rahega database me.
+
+
+ uske baad  1. Component Master Table Database Schema bnana admin database se category get krega uske baad o insert krega id,category,title,subcategory,image/video,links, phir uske andar image, video, links add karne ka option hoga aur last me Used in(0/1) 0 means defalt hai agar use o gya hai to 1 krega ka option hoga ki ye component kis post me use hua hai
+ye sab kuch admin panel se hoga aur admin hi post add karega aur edit karega aur delete karega aur view karega
+
+
+2. Post Table Database Schema bnana jisme post id, post title, post description, post date, post author, post category, post subcategory, post image/video, post links, component id (jo component master table se link hoga) ye sab kuch admin panel se hoga aur admin hi post add karega aur edit karega aur delete karega aur view karega
+
+
+3. newsletter master  me Component Master  databse se khuch id get krna jaise 1,2,3,4,5,6,7  dropdown se  category select krna hoga uske baad title, subcategory, image/video, links CKEditor
+TinyMCE  add krna hoga aur last me used in(0/1) 0 means default hai agar use o gya hai to 1 krega ka option hoga ki ye component kis post me use hua hai ye sab kuch admin panel se hoga aur jo subcriber hai unko mail chala jayega CKEditor TinyMCE mail par short information jayegi read more click krne ke baad ek post.php ka web page bana aur saare post vha show ho jayenge dynamically user ne click krne ke baad o percticluar o post dekh payega  aur admin hi post add karega aur edit karega aur delete karega aur view karega
+
+
+https://chatgpt.com/c/68ad5593-db34-8327-9873-57ca09f0ef7b
+
+
+
+
+
+

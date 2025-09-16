@@ -1,0 +1,251 @@
+:root {
+  --brand1: #f5945c;
+  --brand2: #fec76f;
+  --brand3: #ffffff;
+  --accent: #ff9f43;
+}
+body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; }
+
+/* General styling for the banner image */
+.banner {
+  width: 100%;           /* Full width of parent */
+  height: 220px;         /* Fixed height, change as needed */
+
+  /* display: block; */
+  margin: 0 auto;        /* Center horizontally */
+  border-radius: 1rem;   /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .banner {
+    height: 200px;       /* Smaller height on mobile */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+}
+
+
+.btn-primary {
+  background: linear-gradient(90deg, #f5945c, #ff9f43);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button Hover Animation */
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Arrow Slide on Hover */
+.btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover i {
+  transform: translateX(5px);
+}
+
+/* Icon Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulse Animation Keyframes */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.btn-gradient-action {
+  background: linear-gradient(270deg, #4a90e2, #ff9f43, #9013fe);
+  background-size: 600% 600%;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  animation: gradientShift 8s ease infinite, pulse 2s ease infinite;
+}
+
+.btn-gradient-action:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+
+.icon-pulse {
+  animation: pulse 2s infinite;
+}
+.card { border-radius: 12px; }
+.hero { padding: 56px 0; text-align:center; }
+.newsletter-preview { background: #fff; padding: 18px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.05); }
+
+.btn-gradient {
+      background: linear-gradient(135deg, #f5945c, #fec76f);
+      border: none;
+      color: white;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease;
+    }
+    .hover-shadow:hover {
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+    /* Center the carousel buttons vertically */
+
+    
+.carousel-control-prev,
+.carousel-control-next {
+  width: 35px;
+  height: 30px;
+  top: 70%;
+  transform: translateY(-50%);
+  background: #f5945c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: #f5945c;
+}
+
+/* Hide default Bootstrap icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
+}
+
+/* Font Awesome Icons styling */
+.carousel-control-prev-icon-custom i,
+.carousel-control-next-icon-custom i {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+
+
+
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.icon-wrapper:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.icon-pulse {
+    transition: transform 0.3s ease;
+}
+.icon-wrapper:hover .icon-pulse {
+    animation: pulse 0.8s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+.hover-scale {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-scale:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.form-check {
+      padding: 12px 10px;
+      border-radius: 8px;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-check:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+    .form-check-input {
+      margin-top: 0;
+    }
+    .thank-text {
+      text-align: center;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 12px;
+      border-radius: 8px;
+      color: #2c3e50;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+     .poll-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .form-check {
+    padding: 12px 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .form-check:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  .form-check i {
+    font-size: 1.2rem;
+    color: #f89852;
+  }
+ 
+  .btn-gradient:hover {
+    box-shadow: 0 0 15px rgba(248, 152, 82, 0.6);
+    transform: translateY(-2px);
+  }
+
+
+  .carousel-controls-bottom {
+    position: absolute;
+    bottom: 10px; /* bottom distance adjust kar sakte ho */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+  }
+  .carousel-controls-bottom button {
+    background: #fff;
+    border-radius: 50%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .carousel-controls-bottom button:hover {
+    background: #f39c12;
+    color: #fff !important;
+  }

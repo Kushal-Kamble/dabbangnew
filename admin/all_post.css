@@ -1,0 +1,74 @@
+body {
+    background: #f9f9fb;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.page-link {
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.category-badge {
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 8px 16px;
+    margin: 6px;
+    display: inline-block;
+    transition: all 0.25s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.category-badge:hover {
+    background: #fbaf67;
+    color: #fff;
+    border-color: #fbaf67;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-badge.active {
+    background: #fbaf67;
+    color: #fff;
+    border-color: #fbaf67;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    background-color: #fbaf67;
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+.btn-custom:hover {
+    background-color: #e89b55;
+    color: #fff;
+}
+
+#search {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding-left: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* CKEditor insecure warning ko hide karna */
+.cke_notifications_area {
+    display: none !important;
+}
