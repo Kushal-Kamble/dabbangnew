@@ -9,7 +9,7 @@ $adminName = $_SESSION['admin_name'] ?? ($_SESSION['admin_username'] ?? 'Admin')
     <!-- Logo -->
     <a class="navbar-brand  text-white fw-bold bg-white rounded-2 m-0 p-0" 
        href="<?= htmlspecialchars($BASE_URL . '/public/index.php') ?>">
-      <img src="../assets/logo-mit-school-of-distance-education.png" alt="Logo" class="me-2" style="height:40px;">
+      <img src="../assets/worksmart-logo.png" alt="Logo" class="me-2" style="height:40px;">
       <!-- <span class="d-none d-md-inline">Newsletter Portal</span> -->
     </a>
 

@@ -151,3 +151,22 @@ body { background: #f5f7fb; font-family: 'Segoe UI', sans-serif; }
 .cke_notifications_area {
     display: none !important;
 }
+
+.navbar-brand {
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: flex-start; /* left align */
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  height: 60px;           /* Navbar ke andar fit karne ke liye */
+  overflow: hidden;       /* Image bahar na nikle */
+}
+
+.navbar-brand img {
+    /* max-height: 100%; */
+    width: 100px;
+    /* max-width: 220px; */
+    object-fit: cover;
+}
+

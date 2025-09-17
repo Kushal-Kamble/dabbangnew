@@ -31,10 +31,13 @@ $adminName = $_SESSION['admin_name'] ?? ($_SESSION['admin_username'] ?? 'Admin')
     <button class="btn btn-sm text-white me-2" id="sidebarToggle"><i class="bi bi-list fs-4"></i></button>
 
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center bg-white rounded-2 p-1" 
-       href="<?= htmlspecialchars($BASE_URL . '/public/index.php') ?>">
-      <img src="../assets/logo-mit-school-of-distance-education.png" alt="Logo" style="height:40px;">
-    </a>
+<a class="navbar-brand d-flex align-items-center bg-white rounded-2 p-1" 
+   href="<?= htmlspecialchars($BASE_URL . '/public/index.php') ?>">
+   <img src="../assets/worksmart-logo.png"  alt="Logo">
+</a>
+
+
+
 
     <!-- Navbar Items -->
     <div class="collapse navbar-collapse" id="mainNavbar">

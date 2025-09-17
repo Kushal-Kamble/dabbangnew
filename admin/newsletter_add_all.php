@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h3 class="m-0">📰 Create Multi-Category Newsletter</h3>
-      <a href="newsletters_all.php" class="btn btn-outline-secondary"><i class="bi bi-list-ul"></i> All Multi Newsletters</a>
+      <a href="newsletters.php" class="btn btn text-white" style="background:#fd5402;"><i class="bi bi-list-ul"></i> All Multi Newsletters</a>
     </div>
 
     <?= $msg ?>

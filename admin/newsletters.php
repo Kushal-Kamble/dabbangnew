@@ -31,7 +31,7 @@ $res = $conn->query("SELECT n.*, c.name AS category_name
 <div class="container py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h3 class="m-0">📬 Newsletters</h3>
-    <a href="newsletter_add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> New Newsletter</a>
+    <a href="newsletter_add.php" class="btn btn text-white" style="background:#fd5402;"><i class="bi bi-plus-circle"></i> New Newsletter</a>
   </div>
 
   <?php if(!empty($_GET['msg']) && $_GET['msg']==='deleted'): ?>
