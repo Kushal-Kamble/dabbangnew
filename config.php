@@ -4,8 +4,8 @@
 $BASE_URL = 'http://localhost/dabbangnew'; // change if needed
 
 // DB
-$DB_HOST = 'localhost';
-// $DB_HOST = 'localhost:3309';
+// $DB_HOST = 'localhost';
+$DB_HOST = 'localhost:3309';
 $DB_USER = 'root';
 $DB_PASS = ''; // your DB password
 $DB_NAME = 'dabbangnew'; // your DB name
@@ -27,4 +27,4 @@ $MAIL_SMTP_SECURE = 'tls'; // 'ssl' or 'tls' or ''
 
 // Sender
 $MAIL_FROM_EMAIL = 'kushal.kamble@mitsde.com';
-$MAIL_FROM_NAME  = 'mitsde';
+$MAIL_FROM_NAME  = 'WORKSMART';

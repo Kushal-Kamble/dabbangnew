@@ -89,14 +89,20 @@ CREATE TABLE `component_master` (
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `media_file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('draft','published') COLLATE utf8mb4_unicode_ci DEFAULT 'draft'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;  CREATE TABLE `newsletter_logs` (
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE `newsletter_logs` (
   `id` int(11) NOT NULL,
   `newsletter_id` int(11) DEFAULT NULL,
   `subscriber_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` enum('sent','failed') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sent',
   `error_msg` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sent_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci; CREATE TABLE `newsletter_master` (
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci; 
+
+
+CREATE TABLE `newsletter_master` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_id` int(11) DEFAULT NULL,
@@ -110,7 +116,10 @@ CREATE TABLE `component_master` (
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `scheduled_at` datetime DEFAULT NULL,
   `sent_status` enum('pending','sent','failed') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci; CREATE TABLE `posts` (
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -124,7 +133,10 @@ CREATE TABLE `component_master` (
   `status` enum('draft','published') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'draft',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci; CREATE TABLE `subscribers` (
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE `subscribers` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,

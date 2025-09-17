@@ -22,18 +22,27 @@ $userName = $isLogged ? ($_SESSION['user_name'] ?? trim(($_SESSION['user_first_n
               <i class="bi bi-person-circle me-1 text-success"></i> <?= htmlspecialchars($userName) ?>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-              <li><a class="dropdown-item" href="<?= htmlspecialchars($BASE_URL . '/public/change_password.php') ?>">Change Password</a></li>
-              <li><a class="dropdown-item" href="<?= htmlspecialchars($BASE_URL . '/public/logout.php') ?>">Logout</a></li>
+              <li>
+                <a class="dropdown-item" href="<?= htmlspecialchars($BASE_URL . '/public/change_password.php') ?>">
+                  <i class="bi bi-key me-2 text-warning"></i> Change Password
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="<?= htmlspecialchars($BASE_URL . '/public/logout.php') ?>">
+                  <i class="bi bi-box-arrow-right me-2 text-danger"></i> Logout
+                </a>
+              </li>
             </ul>
+
           </li>
         <?php else: ?>
           <li class="nav-item me-2">
             <button class="btn btn-light btn-sm px-3 fw-semibold" data-bs-toggle="modal" data-bs-target="#subscribeModal">
-              <i class="bi bi-bell-fill me-1 text-warning"></i> Subscribe
+              <i class="bi bi-bell-fill me-1 text-dark"></i> Subscribe
             </button>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-primary btn-sm" href="<?= htmlspecialchars($BASE_URL . '/public/login.php') ?>">Login</a>
+          <li class="nav-item ">
+            <a class="btn btn-login btn-sm px-3 bg-dark text-white fw-semibold " href="<?= htmlspecialchars($BASE_URL . '/public/login.php') ?>"><i class="bi bi-person-fill px-1"></i> Login</a>
           </li>
         <?php endif; ?>
       </ul>
@@ -45,8 +54,13 @@ $userName = $isLogged ? ($_SESSION['user_name'] ?? trim(($_SESSION['user_first_n
 <?php if (!empty($_SESSION['success'])): ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      Swal.fire({ icon: 'success', title: '<?= addslashes($_SESSION['success']) ?>', timer: 2200, showConfirmButton:false });
+    document.addEventListener('DOMContentLoaded', function() {
+      Swal.fire({
+        icon: 'success',
+        title: '<?= addslashes($_SESSION['success']) ?>',
+        timer: 2200,
+        showConfirmButton: false
+      });
     });
   </script>
   <?php unset($_SESSION['success']); ?>
@@ -55,8 +69,11 @@ $userName = $isLogged ? ($_SESSION['user_name'] ?? trim(($_SESSION['user_first_n
 <?php if (!empty($_SESSION['error'])): ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      Swal.fire({ icon: 'error', title: '<?= addslashes($_SESSION['error']) ?>' });
+    document.addEventListener('DOMContentLoaded', function() {
+      Swal.fire({
+        icon: 'error',
+        title: '<?= addslashes($_SESSION['error']) ?>'
+      });
     });
   </script>
   <?php unset($_SESSION['error']); ?>

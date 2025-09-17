@@ -42,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = '
     <div style="font-family: Arial, sans-serif; max-width:600px; margin:auto; background:#f5f7fb; border-radius:8px; overflow:hidden;">
       <div style="background:#fe9e43; padding:20px; text-align:center;">
-        <h1 style="color:#fff; margin:0;">MITSDE Newsletter</h1>
+        <h1 style="color:#fff; margin:0;">WORKSMART Newsletter</h1>
       </div>s
       <div style="padding:20px; color:#212428;">
         <p>Hi <strong>'.$first_name.' '.$last_name.'</strong>,</p>
-        <p>Thank you for subscribing to <b>MITSDE Newsletter</b>! 🎉</p>
+        <p>Thank you for subscribing to <b>WORKSMART Newsletter</b>! 🎉</p>
         <p>Here are your login details:</p>
         <table style="width:100%; border-collapse:collapse; margin-top:10px;">
           <tr>
@@ -62,14 +62,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p style="font-size:13px; color:#666;">For your security, please change your password after logging in.</p>
       </div>
       <div style="background:#212428; color:#fefffe; text-align:center; padding:10px;">
-        © '.date('Y').' MITSDE Newsletter | Stay Connected 🚀
+        © '.date('Y').' WORKSMART Newsletter | Stay Connected 🚀
       </div>
     </div>';
 
     // Send mail
     $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-    $headers .= "From: MITSDE Newsletter <newsletter@mitsde.com>\r\n";
+    $headers .= "From: WORKSMART Newsletter <newsletter@worksmart.com>\r\n";
 
     mail($email, $subject, $message, $headers);
 
@@ -105,13 +105,15 @@ $latestPosts = $conn->query("
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="../assets/favicon-mit.ico" />
-  <title>MITSDE — Newsletter</title>
+  <title>WORKSMART — Newsletter</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
+
+  <link rel="stylesheet" href="../assets/css/indexpublic.css">
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
 
 
 
@@ -331,6 +333,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<script>
+  // Prevent hover behavior issues on touch devices
+  document.querySelectorAll('.navbar .dropdown').forEach(function(drop) {
+    drop.addEventListener('touchstart', function(e) {
+      if (!this.classList.contains('show')) {
+        this.querySelector('.dropdown-toggle').click();
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+
 
 
 

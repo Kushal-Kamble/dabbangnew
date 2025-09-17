@@ -78,13 +78,13 @@ if ($stmt->execute()) {
 
     // Plain text
     $plainText = "Hi {$first_name} {$last_name},\n\n"
-        . "Thanks for subscribing to MITSDE Newsletter!\n\n"
+        . "Thanks for subscribing to WORKSMART Newsletter!\n\n"
         . "Login details:\n"
         . "Email: {$email}\n"
         . "Password: {$plainPass}\n\n"
         . "Login: " . rtrim($BASE_URL, '/') . "/public/login.php\n\n"
         . "For your security, please change your password after logging in.\n\n"
-        . "— MITSDE Team";
+        . "— WORKSMART Team";
 
     // HTML template (table-based)
    // Hybrid Modern Email HTML
@@ -103,7 +103,7 @@ $html = "
           <!-- Header -->
           <tr>
             <td style='background:linear-gradient(45deg,#f5945c,#fec76f);padding:24px;text-align:center;'>
-              <h2 style='margin:0;font-size:22px;color:#fff;'>Welcome to MITSDE Newsletter 🎉</h2>
+              <h2 style='margin:0;font-size:22px;color:#fff;'>Welcome to WORKSMART Newsletter 🎉</h2>
             </td>
           </tr>
           
@@ -112,7 +112,7 @@ $html = "
             <td style='padding:36px;color:#333;font-size:15px;line-height:1.6;'>
               <p style='margin:0 0 12px;font-size:17px;'>Hi <strong>".htmlspecialchars($first_name)." ".htmlspecialchars($last_name)."</strong>,</p>
               <p style='margin:0 0 20px;color:#555;'>
-                Thank you for subscribing to <strong>MITSDE Newsletter</strong>! 🚀<br>
+                Thank you for subscribing to <strong>WORKSMART Newsletter</strong>! 🚀<br>
                 Here are your login details:
               </p>
               
@@ -146,7 +146,7 @@ $html = "
           <!-- Footer -->
           <tr>
             <td style='background:#fff2e5;padding:12px;text-align:center;color:#777;font-size:12px;border-top:1px solid #ffd2a6;'>
-              © ".date('Y')." MITSDE Newsletter | Stay Connected 🚀
+              © ".date('Y')." WORKSMART Newsletter | Stay Connected 🚀
             </td>
           </tr>
         </table>
@@ -169,7 +169,7 @@ $html = "
     if (!$sent) {
         $headers  = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-        $headers .= "From: MITSDE Newsletter <newsletter@mitsde.com>\r\n";
+        $headers .= "From: WORKSMART Newsletter <newsletter@worksmart.com>\r\n";
         @mail($email, $subject, $html, $headers);
     }
 

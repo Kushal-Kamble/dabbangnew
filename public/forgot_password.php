@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $up->close();
 
     if ($ok) {
-        $subject = "🔐 MITSDE — Your New Password";
+        $subject = "🔐 WORKSMART — Your New Password";
         $loginUrl = rtrim($BASE_URL, '/') . "/public/login.php";
 
         // Modern Email HTML
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div style='margin:20px 0;padding:12px 20px;background:#fef4e7;border-radius:6px;font-size:18px;font-weight:bold;color:#f5945c;display:inline-block;'>{$newPass}</div>
               <p><a href='{$loginUrl}' style='display:inline-block;margin-top:15px;padding:12px 22px;background:#f5945c;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;'>Login Now</a></p>
             </div>
-            <div style='background:#fef4e7;padding:10px;font-size:12px;color:#777;'>© " . date('Y') . " MITSDE. All rights reserved.</div>
+            <div style='background:#fef4e7;padding:10px;font-size:12px;color:#777;'>© " . date('Y') . " WORKSMART. All rights reserved.</div>
           </div>
         </div>";
 
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$sent) {
             $headers  = "MIME-Version: 1.0\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-            $headers .= "From: newsletter@mitsde.com\r\n";
+            $headers .= "From: newsletter@worksmart.com\r\n";
             @mail($email, $subject, $html, $headers);
         }
 

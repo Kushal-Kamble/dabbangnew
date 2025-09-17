@@ -44,57 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login — MITSDE</title>
+  <title>Login — WORKSMART</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <style>
-    :root {
-      --brand1: #f5945c;
-      --brand2: #fec76f;
-    }
-    body {
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(135deg, var(--brand1) 0%, var(--brand2) 100%);
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .login-card {
-      width:100%;
-      max-width:420px;
-      background:#fff;
-      padding:28px;
-      border-radius:16px;
-      box-shadow:0 12px 40px rgba(0,0,0,0.15);
-      animation:fadeInUp .6s ease;
-    }
-    .login-card h3 {
-      color:var(--brand1);
-      font-weight:600;
-    }
-    .btn-brand {
-      background:var(--brand1);
-      border:none;
-      color:#fff;
-      font-weight:600;
-      transition:all .3s ease;
-    }
-    .btn-brand:hover {
-      background:var(--brand2);
-      color:#212529;
-    }
-    .modal-header {
-      background: var(--brand1);
-    }
-    .modal-header .btn-close {
-      filter:invert(1);
-    }
-    @keyframes fadeInUp {
-      from {opacity:0;transform:translateY(20px);}
-      to {opacity:1;transform:translateY(0);}
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/login-page.css">
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
 </head>
 <body>
 

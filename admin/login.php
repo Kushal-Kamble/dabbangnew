@@ -48,29 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <link rel="stylesheet" href="<?= htmlspecialchars($BASE_URL . '/assets/css/styles.css') ?>">
 <!-- Toastify CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<style>
-  body {
-    background: #f5f7fb;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  .login-card {
-    width: 380px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border: none;
-  }
-  .btn-primary {
-    background-color: #fe9e43;
-    border: none;
-  }
-  .btn-primary:hover {
-    background-color: #e88c2d;
-  }
-  h4 {
-    color: #212428;
-    font-weight: 600;
-  }
-</style>
+  <link rel="stylesheet" href="../assets/css/login-page.css">
 </head>
 <body class="d-flex align-items-center justify-content-center vh-100">
 

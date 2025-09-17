@@ -18,7 +18,7 @@ $adminName = $_SESSION['admin_name'] ?? ($_SESSION['admin_username'] ?? 'Admin')
   <!-- Toastify -->
   <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
 
   
 </head>

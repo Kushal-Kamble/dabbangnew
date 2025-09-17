@@ -1,0 +1,193 @@
+/* 🎨 Brand Colors */
+:root {
+  --brand1: #f5945c;
+  --brand2: #fec76f;
+  --bg-light: #f5f7fb;
+  --text-dark: #212428;
+  --text-muted: #666;
+  --white: #ffffff;
+}
+
+/* 🌟 Body Styling */
+body {
+  background: var(--bg-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.7;
+  padding-bottom: 3rem;
+}
+
+/* 🖼 Hero Image Section */
+.post-hero {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+}
+.post-hero img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.post-hero:hover img {
+  transform: scale(1.04);
+}
+
+/* 🏷 Post Title */
+.post-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--brand1);
+  background: linear-gradient(90deg, var(--brand1), var(--brand2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* 🗂 Header Box */
+.post-header {
+  background: var(--white);
+  border-left: 6px solid var(--brand1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+.post-header:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+.post-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 1rem;
+}
+
+/* 🕒 Meta Info */
+.post-meta {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 📝 Post Content */
+.post-content {
+  background: var(--white);
+  padding: 2.2rem;
+  border-radius: 18px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+  line-height: 1.9;
+  font-size: 1.05rem;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.post-content h2,
+.post-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--brand1);
+}
+.post-content a {
+  color: #0652DD;
+  /* text-decoration: underline; */
+  transition: color 0.3s ease;
+   font-weight: 600;
+  /* border-bottom: 2px solid var(--brand2); */
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.post-content a:hover {
+color: var(--brand1);
+  border-color: var(--brand1);
+}
+
+/* 🖼 Images Inside Content */
+.post-content img {
+  max-width: 100%;
+  border-radius: 14px;
+  margin: 24px 0;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+.post-content img:hover {
+  transform: scale(1.03);
+}
+
+/* 🔖 Badge Styling */
+.badge.bg-warning {
+  background-color: var(--brand2) !important;
+  color: #000 !important;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+}
+.badge.bg-info {
+  background-color: var(--brand1) !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+}
+
+/* ✨ Small Calendar Text */
+small {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .post-hero img {
+    height: 280px;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
+  .post-content {
+    padding: 1.5rem;
+  }
+}
+
+
+/* header */
+
+/* 📜 Dropdown Menu Styling */
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 0.4rem 0;
+  animation: dropdownFade 0.25s ease;
+}
+
+/* ✨ Dropdown Item Hover */
+.dropdown-item {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.dropdown-item:hover {
+  background-color: rgba(245, 148, 92, 0.15);
+  transform: translateX(4px);
+}
+
+/* 🌟 Animation */
+@keyframes dropdownFade {
+  from {opacity: 0; transform: translateY(-8px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* 🟠 Hover par dropdown dikhaye (sirf lg screens) */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* default Bootstrap ke jump ko prevent kare */
+    animation: dropdownFade 0.25s ease;
+  }
+}

@@ -88,7 +88,9 @@ if (!empty($_SESSION['show_welcome'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+ 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
 </head>
 <body>
 <?php include 'sidebar.php'; ?> 
